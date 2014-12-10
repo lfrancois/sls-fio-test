@@ -1,0 +1,4 @@
+[seq-write]
+rw=write
+size=128m
+directory=/tmp/fio-testing/data

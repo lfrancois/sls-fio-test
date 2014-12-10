@@ -1,0 +1,4 @@
+[random-write]
+rw=randwrite
+directory=/tmp/fio-testing/data
+size=1g
