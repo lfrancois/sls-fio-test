@@ -6,6 +6,7 @@ fio benchmark for SLS platform
 INSTALL
 =======
 
+```
 root@ubuntu:~# git clone https://github.com/lfrancois/sls-fio-test.git
 root@ubuntu:~# cd sls-fio-test/
 root@ubuntu:~/sls-fio-test# ./run_fio.sh
@@ -22,4 +23,4 @@ root@ubuntu:~/sls-fio-test# ./run_fio.sh
 11_seq-write_bs_256k.fio       ===              169562KB/s
 12_seq-write_size_1g.fio       ===              125502KB/s
 root@ubuntu:~/sls-fio-test# 
-
+```
