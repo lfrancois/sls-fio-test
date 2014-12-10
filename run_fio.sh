@@ -4,5 +4,5 @@ command -v fio >/dev/null 2>&1 || { echo >&2 "I require fio but it's not install
 for i in *fio
 do
  printf "%-30s ===\t\t" $i
- fio $i | grep aggr | awk '{ print $3 }'
+ fio $i | grep aggr | awk '{ print $3 }' | sed 's/aggrb=//' | tr ',' ' '
 done
