@@ -1,0 +1,26 @@
+#! /bin/bash
+INSTALLDIR=/root
+CSV_FILE=/$INSTALLDIR/cronjob_fio_${HOSTNAME}_$(date -I).csv
+
+command -v fio >/dev/null 2>&1 || { echo >&2 "I require fio but it's not installed.  Aborting."; exit 1; }
+[[ -d /tmp/fio-testing/data ]] || mkdir -p /tmp/fio-testing/data
+
+if [[ ! -f "$CSV_FILE" ]] 
+then
+	echo -n 'Time ,' > "$CSV_FILE"
+	for i in /$INSTALLDIR/sls-fio-test/*.fio
+	do
+		echo -n "$i , " >> "$CSV_FILE"
+	done
+	echo >> "$CSV_FILE"
+fi
+
+timestamp=$(date --rfc-3339 seconds)
+echo -n "$timestamp , " >> "$CSV_FILE"
+
+for i in /$INSTALLDIR/sls-fio-test/*.fio
+do
+ res=$(fio "$i" | grep aggr | awk '{ print $3 }' | sed 's/aggrb=//' | tr ',' ' ' | tr -s '\n')
+ echo -n "$res , " >> "$CSV_FILE"
+done
+echo >> "$CSV_FILE"
