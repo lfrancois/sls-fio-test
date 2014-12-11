@@ -1,4 +1,0 @@
-[seq-read]
-rw=read
-size=1g
-directory=/tmp/fio-testing/data
