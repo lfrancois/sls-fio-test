@@ -1,5 +1,4 @@
 [seq-write]
 rw=write
-size=128m
+size=1g
 directory=/tmp/fio-testing/data
-bs=256k

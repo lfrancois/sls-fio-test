@@ -1,5 +1,4 @@
 [random-write]
 rw=randwrite
 directory=/tmp/fio-testing/data
-size=128m
-bs=256k
+size=1g
