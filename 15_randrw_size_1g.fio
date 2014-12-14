@@ -1,0 +1,4 @@
+[randrw]
+rw=randrw
+directory=/tmp/fio-testing/data
+size=1g
